@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 using UnityEngine.Video;
 public class MenuManager : MonoBehaviour
 {
-    public GameObject Options;
     void Start()
     {
     }
@@ -17,12 +16,11 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("cena1");
     }
-    public void clicaroptions()
+    public void clicarQuit()
     {
-        Options.SetActive(true);
+        Application.Quit();
     }
     public void clicarback()
     {
-        Options.SetActive(false);
     }
 }
