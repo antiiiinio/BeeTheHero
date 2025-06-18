@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
         if (tempoAtivo > 0)
         {
             tempoAtivo += Time.deltaTime;
-            timepesado = 0.33f;
-            timebasico = 0.05f;
+            timepesado = 0.5f;
+            timebasico = 0.08f;
         }
         if (armapesada == 0)
         {
@@ -81,14 +81,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector3.left * forceAmount * Time.deltaTime);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SceneManager.LoadScene("cena1");
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SceneManager.LoadScene("cena2");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {

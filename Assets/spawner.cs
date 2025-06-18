@@ -10,8 +10,6 @@ public class spawner : MonoBehaviour
     public int inimigosvivos;
     public GameObject inimigo;
     public GameObject MiniInimigo;
-    float tempo = 0f;
-    float temporizador = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -94,13 +92,8 @@ public class spawner : MonoBehaviour
             {
                 if (wave == 5)
                 {
-                    tempo += Time.deltaTime;
                     controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
                     controller.Vitoria();
-                    if (tempo >= temporizador);
-                    {
-                        SceneManager.LoadScene("cena2");
-                    }
                 }
                 wave++;
             }

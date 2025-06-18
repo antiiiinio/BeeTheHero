@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine.UI;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour
     public int pontos = 0;
     public int VidaPlayer;
     private bool isPaused = false;
+    public int vitoriaderrota;
 
     public void Start()
     {
+        Time.timeScale = 1;
+        vitoriaderrota = 0;
         MudarPontos(0);
         VidaPlayer = 6;
         float effSL = PlayerPrefs.GetFloat("effvol");
@@ -37,12 +41,21 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isPaused = !isPaused;
             pausado();
+        }
+        if (vitoriaderrota == 1)
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                SceneManager.LoadScene("cena1");
+            }
+        }
+        if (vitoriaderrota == 2)
+        {
+            if (Input.GetKey(KeyCode.F))
+            {
+                SceneManager.LoadScene("MENU");
+            }
         }
     }
     public void MudarPontos(int valor)
@@ -57,13 +70,15 @@ public class GameManager : MonoBehaviour
     }
     public void Derrota()
     {
-        ControleGameOver.text = "Game Over, you lost.";
+        ControleGameOver.text = "Game Over, Press R to retry.";
         Time.timeScale = 0;
+        vitoriaderrota = 1;
     }
     public void Vitoria()
     {
-        ControleGameOver.text = "You win!";
+        ControleGameOver.text = "You win!, Press F to return to menu";
         Time.timeScale = 0;
+        vitoriaderrota = 2;
     }
     public void DanoPlayer(int dano)
     {
