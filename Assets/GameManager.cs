@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ControlePontos;
     public int pontos = 0;
     public int VidaPlayer;
-    private bool isPaused = false;
     public int vitoriaderrota;
 
     public void Start()
@@ -37,11 +36,6 @@ public class GameManager : MonoBehaviour
         if (pontos < 0)
         {
             SetPontos(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isPaused = !isPaused;
-            pausado();
         }
         if (vitoriaderrota == 1)
         {
@@ -96,16 +90,4 @@ public class GameManager : MonoBehaviour
             VidaPlayer = VidaPlayer + 1;
         }
     }
-        void pausado()
-        {
-            if (isPaused)
-            {
-                Time.timeScale = 0;
-            }
-            if (!isPaused)
-            {
-                Time.timeScale = 1;
-            }
-        }
-
 }
