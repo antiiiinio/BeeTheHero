@@ -78244,21 +78244,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 97342726424068316, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: Lens.FieldOfView
-      value: 44.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 97342726424068316, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: Lens.FarClipPlane
-      value: 933.6
-      objectReference: {fileID: 0}
     - target: {fileID: 558242265228987102, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449403116338861626, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: m_Constraints
-      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1691529527483147236, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: tiroVFX
@@ -78331,34 +78319,6 @@ PrefabInstance:
     - target: {fileID: 4722717298701830409, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: tiro
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: field of view
-      value: 44.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: far clip plane
-      value: 933.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.79607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.105882354
       objectReference: {fileID: 0}
     - target: {fileID: 8367462041274007043, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: m_LocalPosition.x

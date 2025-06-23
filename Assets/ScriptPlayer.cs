@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     GameManager controller;
     public VisualEffect TiroVFXNOVO;
     public Rigidbody rb;
-    public float forceAmount = 10f;
+    float forceAmount = 1500f;
+    float DashForce = 25000f;
     public GameObject tiro;
     public GameObject tirogrande;
     public int VidaPlayer;
@@ -25,20 +26,24 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        DashTimer = 2f;
         AudioControl = GameObject.FindGameObjectWithTag("MainCamera").gameObject.GetComponent<AudioController>();
         armabasica = 1;
         armaequipada = 1;
         VidaPlayer = 6;
         rb = GetComponent<Rigidbody>();
     }
-    public float timerbasico = 1f;
-    public float timebasico = 0.15f;
-    public float timerpesado = 1f;
-    public float timepesado = 1f;
-    public float duracao = 10f;
-    public float tempoAtivo = 0f;
+    float timerbasico = 1f;
+    float timebasico = 0.15f;
+    float timerpesado = 1f;
+    float timepesado = 1f;
+    float duracao = 10f;
+    float tempoAtivo = 0f;
+    public float DashTimer;
+    public float DashCooldown = 2f;
     void Update()
     {
+        DashTimer += Time.deltaTime;
         if (tempoAtivo >= duracao)
         {
             tempoAtivo = 0f;
@@ -69,18 +74,58 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce(Vector3.up * forceAmount * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (DashTimer >= DashCooldown)
+                {
+                    rb.AddForce(Vector3.up * DashForce * Time.deltaTime);
+                    DashTimer = 0f;
+                    controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+                    controlador.GenerateImpulse(0.2f);
+                }
+            }
         }
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(Vector3.down * forceAmount * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (DashTimer >= DashCooldown)
+                {
+                    rb.AddForce(Vector3.down * DashForce * Time.deltaTime);
+                    DashTimer = 0f;
+                    controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+                    controlador.GenerateImpulse(0.2f);
+                }
+            }
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector3.right * forceAmount * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (DashTimer >= DashCooldown)
+                {
+                    rb.AddForce(Vector3.right * DashForce * Time.deltaTime);
+                    DashTimer = 0f;
+                    controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+                    controlador.GenerateImpulse(0.2f);
+                }
+            }
         }
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector3.left * forceAmount * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (DashTimer >= DashCooldown)
+                {
+                    rb.AddForce(Vector3.left * DashForce * Time.deltaTime);
+                    DashTimer = 0f;
+                    controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+                    controlador.GenerateImpulse(0.2f);
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -155,12 +200,6 @@ public class Player : MonoBehaviour
         {
             controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.DanoPlayer(1);
-            controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
-            controlador.GenerateImpulse(0.2f);
-        }
-        if (other.gameObject.tag == "TiroBasicoInimigo")
-        {
-            controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.MudarPontos(-10);
             VidaPlayer = VidaPlayer - 1;
         }

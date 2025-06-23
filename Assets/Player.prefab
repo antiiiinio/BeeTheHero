@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3748457857992440736}
   - component: {fileID: 3987802967432441685}
   - component: {fileID: -985144928103597295}
+  - component: {fileID: 8727805773161780479}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,19 +158,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TiroVFXNOVO: {fileID: 5999569978154486949, guid: 40dabc1455a21a947af9d6d6ade9383f, type: 3}
   rb: {fileID: 1449403116338861626}
-  forceAmount: 1500
   tiro: {fileID: 6280776512547296607, guid: bf95a9b2803df0f4bb68196edd86b50e, type: 3}
   tirogrande: {fileID: 3239978661854511577, guid: fbee7cb4a95081346a46c09bf57aac09, type: 3}
   VidaPlayer: 6
   armabasica: 1
   armapesada: 1
   armaequipada: 0
-  timerbasico: 1
-  timebasico: 0.15
-  timerpesado: 0
-  timepesado: 1
-  duracao: 10
-  tempoAtivo: 0
+  DashTimer: 0
+  DashCooldown: 2
 --- !u!114 &3748457857992440736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,14 +180,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImpulseDefinition:
     ImpulseChannel: 1
-    ImpulseShape: 2
+    ImpulseShape: 0
     CustomImpulseShape:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.60614187
+        inSlope: -0.5431912
+        outSlope: -0.5431912
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.4125
+      - serializedVersion: 3
+        time: 1
+        value: 0.01651001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    ImpulseDuration: 0.3
+    ImpulseDuration: 0.2
     ImpulseType: 0
     DissipationRate: 0.25
     RawSignal: {fileID: 0}
@@ -222,7 +236,7 @@ MonoBehaviour:
     DissipationMode: 2
     DissipationDistance: 100
     PropagationSpeed: 343
-  DefaultVelocity: {x: 2, y: 1, z: 0}
+  DefaultVelocity: {x: 1.4, y: 1, z: 0}
 --- !u!82 &3987802967432441685
 AudioSource:
   m_ObjectHideFlags: 0
@@ -417,6 +431,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8727805773161780479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558242265228987102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 2
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.3
+    ImpulseType: 0
+    DissipationRate: 0
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0, y: -1, z: 0}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTag: Untagged
+  UseImpactDirection: 0
+  ScaleImpactWithMass: 0
+  ScaleImpactWithSpeed: 0
 --- !u!1 &997382370156181373
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,8 +559,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1387
-  field of view: 40
+  far clip plane: 933.6
+  field of view: 44.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -696,10 +770,10 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 44.5
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 2555
+    FarClipPlane: 933.6
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
