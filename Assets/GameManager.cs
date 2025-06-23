@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int pontos = 0;
     public int VidaPlayer;
     public int vitoriaderrota;
+    public int faseatual;
 
     public void Start()
     {
@@ -41,14 +42,28 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.R))
             {
-                SceneManager.LoadScene("cena1");
+                if(faseatual == 1)
+                {
+                    SceneManager.LoadScene("cena1");
+                }
+                if (faseatual == 2)
+                {
+                    SceneManager.LoadScene("cena2");
+                }
             }
         }
         if (vitoriaderrota == 2)
         {
             if (Input.GetKey(KeyCode.F))
             {
-                SceneManager.LoadScene("MENU");
+                if(faseatual == 1)
+                {
+                    SceneManager.LoadScene("cena2");
+                }
+                if (faseatual == 2)
+                {
+                    SceneManager.LoadScene("MENU");
+                }
             }
         }
     }
@@ -70,7 +85,7 @@ public class GameManager : MonoBehaviour
     }
     public void Vitoria()
     {
-        ControleGameOver.text = "You win!, Press F to return to menu";
+        ControleGameOver.text = "You win!, Press F to proceed";
         Time.timeScale = 0;
         vitoriaderrota = 2;
     }
