@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public VisualEffect TiroVFXNOVO;
     public Rigidbody rb;
     float forceAmount = 1500f;
-    float DashForce = 25000f;
+    float DashForce = 32500f;
     public GameObject tiro;
     public GameObject tirogrande;
     public int VidaPlayer;
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
                     rb.AddForce(Vector3.up * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
-                    controlador.GenerateImpulse(0.2f);
+                    controlador.GenerateImpulse(0.5f);
                 }
             }
         }
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
                     rb.AddForce(Vector3.down * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
-                    controlador.GenerateImpulse(0.2f);
+                    controlador.GenerateImpulse(0.5f);
                 }
             }
         }
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
                     rb.AddForce(Vector3.right * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
-                    controlador.GenerateImpulse(0.2f);
+                    controlador.GenerateImpulse(0.5f);
                 }
             }
         }
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
                     rb.AddForce(Vector3.left * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
-                    controlador.GenerateImpulse(0.2f);
+                    controlador.GenerateImpulse(0.5f);
                 }
             }
         }

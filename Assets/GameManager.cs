@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ControlePontos;
     public int pontos = 0;
     public int VidaPlayer;
+    public int Vidacolmeia;
     public int vitoriaderrota;
     public int faseatual;
 
     public void Start()
     {
+        Vidacolmeia = 3;
         Time.timeScale = 1;
         vitoriaderrota = 0;
         MudarPontos(0);
@@ -31,6 +33,10 @@ public class GameManager : MonoBehaviour
             VidaPlayer = 6;
         }
         if (VidaPlayer <= 0)
+        {
+            Derrota();
+        }
+        if (Vidacolmeia <= 0)
         {
             Derrota();
         }
@@ -96,6 +102,10 @@ public class GameManager : MonoBehaviour
             VidaPlayer = VidaPlayer - 1;
             VidaControl[VidaPlayer].gameObject.SetActive(false);
         }
+    }
+    public void DiminuirVidaColmeia()
+    {
+        Vidacolmeia = Vidacolmeia - 1;
     }
     public void CuraPlayer(int cura)
     {

@@ -87,22 +87,16 @@ public class spawnerFase2 : MonoBehaviour
                 if (wave == 4)
                 {
                     Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(1, 0, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(2, 0, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-1, 0, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-2, 0, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(0, 1, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(2, 1, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(0, 2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(2, 2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-1, 2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-2, 2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(0, -1, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-2, -1, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(0, -2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(-2, -2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(2, -2, 0), transform.rotation);
-                    Instantiate(inimigo, transform.position + new Vector3(1, -2, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
+                    Instantiate(inimigo, transform.position + new Vector3(0, 0, 0), transform.rotation);
                     timer = 0f;
                     wave++;
                 }
