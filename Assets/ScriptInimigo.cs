@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class ScriptInimigo : MonoBehaviour
 {
+    public Animator anim;
     GameManager controller;
     public Rigidbody rbinimigo;
     public float forceAmount = 10f;
@@ -17,19 +18,20 @@ public class ScriptInimigo : MonoBehaviour
 
     public void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.Play("Chegando");
         rbinimigo = GetComponent<Rigidbody>();
-
-        // Encontra o jogador pelo tag "Player"
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerTransform = player.transform;
         }
         timer = UnityEngine.Random.Range(0f, 2f);
+        timer = timer - 1f;
     }
 
-    public float timer = 1f;
-    public float time = 5f;
+    public float timer;
+    float time = 5f;
     public float cura = 0f;
     public float cura_cd = 10f;
     public float random = 0f;
@@ -38,9 +40,20 @@ public class ScriptInimigo : MonoBehaviour
     {
         timer += Time.deltaTime;
         cura += Time.deltaTime;
-        if (timer >= time)
+        if (timer < 4f)
         {
+            anim.SetBool("Idle", true);
+            anim.SetBool("Ataque", false);
+        }
+        if (timer >= 4f)
+        {
+            anim.SetBool("Idle", false);
+            anim.SetBool("Ataque", true);
+        }
+        if (timer >= 5f)
+        {          
             AtirarInimigo();
+            timer = 0f;
         }
         if (vidaInimigo <= 0) //droprate de power-up
         {
@@ -79,9 +92,7 @@ public class ScriptInimigo : MonoBehaviour
     public void AtirarInimigo()
     {
         Instantiate(tiroinimigo, transform.position + transform.forward, transform.rotation);
-        timer = 0f;
     }
-
     public void DanoTiroBasico(int dano)
     {
         vidaInimigo -= dano;
