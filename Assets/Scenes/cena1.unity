@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.003921569, g: 0.13333334, b: 0.18039216, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.001
   m_LinearFogStart: 0
@@ -76643,6 +76643,18 @@ PrefabInstance:
     - target: {fileID: 4722717298701830409, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: tiro
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.1792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.13228372
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.0025364854
       objectReference: {fileID: 0}
     - target: {fileID: 8367462041274007043, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: m_LocalPosition.x
