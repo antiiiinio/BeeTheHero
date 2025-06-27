@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 79254b22f99e0024ca3802026da59fe7
+guid: 0d09673ded9535d4dbe632f9351b5f9f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: AsasInimigo
-    second: {fileID: 2100000, guid: f71bd1d7419f72843a06a7e608ee34ed, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Inimigo
-    second: {fileID: 2100000, guid: ef08b6c0fb8a177498691fb6b9289a3e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
