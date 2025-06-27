@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     }
     void Update()
     {
+        Time.timeScale = 1;
     }
     public void clicarplay()
     {
