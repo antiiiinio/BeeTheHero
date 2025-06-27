@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2e0c494d8b2b25468f3bc2e5c8c1738
+guid: 79254b22f99e0024ca3802026da59fe7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: AsasInimigo
-    second: {fileID: 2100000, guid: 06af0e10d2cac9244a6f4bc45ec10dcb, type: 2}
+    second: {fileID: 2100000, guid: f71bd1d7419f72843a06a7e608ee34ed, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Inimigo
-    second: {fileID: 2100000, guid: 4fe7ff038a88a3343bb85daf8268afa9, type: 2}
+    second: {fileID: 2100000, guid: ef08b6c0fb8a177498691fb6b9289a3e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

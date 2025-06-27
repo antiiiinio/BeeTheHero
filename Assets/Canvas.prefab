@@ -702,7 +702,9 @@ MonoBehaviour:
   ControlePontos: {fileID: 5978073423978492864}
   pontos: 0
   VidaPlayer: 6
+  Vidacolmeia: 0
   vitoriaderrota: 0
+  faseatual: 0
 --- !u!1 &1124330744463723191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,6 +2725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2351228814380280938}
     m_Modifications:
+    - target: {fileID: 2887744317866614727, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 3956505417594767292, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

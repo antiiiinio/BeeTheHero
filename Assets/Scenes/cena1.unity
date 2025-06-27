@@ -60474,7 +60474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: 0
   inimigosvivos: 0
-  inimigo: {fileID: 1101306191457436432, guid: 22e621abb1f6af24da31ad59346d35d9, type: 3}
+  inimigo: {fileID: 3444954646432538303, guid: 807d4f305ff1c1c488187d789de4e2f1, type: 3}
   MiniInimigo: {fileID: 2369511553222722279, guid: 91c299521b247744ca2a0b8897b85139, type: 3}
   timer: 5
   time: 6
@@ -76753,6 +76753,10 @@ PrefabInstance:
     - target: {fileID: 1041880496335762169, guid: 73ea469126962324eb81bd9e4ed805f5, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293272206888400496, guid: 73ea469126962324eb81bd9e4ed805f5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2351228814380280938, guid: 73ea469126962324eb81bd9e4ed805f5, type: 3}
       propertyPath: m_Pivot.x

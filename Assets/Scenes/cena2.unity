@@ -635,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: 0
   inimigosvivos: 0
-  inimigo: {fileID: 1101306191457436432, guid: 22e621abb1f6af24da31ad59346d35d9, type: 3}
+  inimigo: {fileID: 3444954646432538303, guid: 807d4f305ff1c1c488187d789de4e2f1, type: 3}
   MiniInimigo: {fileID: 2369511553222722279, guid: 91c299521b247744ca2a0b8897b85139, type: 3}
   timer: 10
   time: 10
