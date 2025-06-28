@@ -36,7 +36,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BossRig|BossArrival
+      name: ChegandoBoss
       takeName: BossRig|BossArrival
       internalID: 3802952729526625735
       firstFrame: 0
@@ -65,7 +65,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BossRig|BossCutMove
+      name: CutBoss
       takeName: BossRig|BossCutMove
       internalID: -676968325709867398
       firstFrame: 0
@@ -94,7 +94,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BossRig|BossDeath
+      name: DeathBoss
       takeName: BossRig|BossDeath
       internalID: -4949257166261108924
       firstFrame: 0
@@ -123,7 +123,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BossRig|BossFireLeft
+      name: FireLeftBoss
       takeName: BossRig|BossFireLeft
       internalID: 6713352299348004198
       firstFrame: 0
@@ -152,7 +152,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BossRig|BossFireRigth
+      name: FireRigthBoss
       takeName: BossRig|BossFireRigth
       internalID: -5121665673963569729
       firstFrame: 0
@@ -181,7 +181,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BossRig|BossIdle
+      name: IdleBoss
       takeName: BossRig|BossIdle
       internalID: 9007404286092572109
       firstFrame: 0
@@ -192,7 +192,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

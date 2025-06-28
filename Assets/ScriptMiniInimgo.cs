@@ -6,6 +6,7 @@ using Unity.Mathematics;
 
 public class ScriptMiniInimigo : MonoBehaviour
 {
+    public Animator Minianim;
     GameManager controller;
     public Rigidbody rbinimigo;
     public float forceAmount = 10f;
@@ -18,6 +19,8 @@ public class ScriptMiniInimigo : MonoBehaviour
 
     public void Start()
     {
+        Minianim = GetComponent<Animator>();
+        Minianim.Play("ChegandoDrone");
         rbinimigo = GetComponent<Rigidbody>();
 
         // Encontra o jogador pelo tag "Player"
@@ -27,6 +30,8 @@ public class ScriptMiniInimigo : MonoBehaviour
             playerTransform = player.transform;
         }
         timer = UnityEngine.Random.Range(0f, 2f);
+        timer = timer - 1f;
+        Minianim.SetBool("Idle", true);
     }
 
     public float timer = 1f;

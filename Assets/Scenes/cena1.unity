@@ -60475,7 +60475,7 @@ MonoBehaviour:
   wave: 0
   inimigosvivos: 0
   inimigo: {fileID: 3444954646432538303, guid: 807d4f305ff1c1c488187d789de4e2f1, type: 3}
-  MiniInimigo: {fileID: 2369511553222722279, guid: 91c299521b247744ca2a0b8897b85139, type: 3}
+  MiniInimigo: {fileID: 2461861675267685799, guid: 3724379091238a34cb5fe25a84113cdf, type: 3}
   timer: 5
   time: 6
 --- !u!4 &1705168067
@@ -76643,6 +76643,10 @@ PrefabInstance:
     - target: {fileID: 4722717298701830409, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: tiro
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: m_BackGroundColor.b

@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
                 {
                     SceneManager.LoadScene("cena2");
                 }
+                if (faseatual == 3)
+                {
+                    SceneManager.LoadScene("cena3");
+                }
             }
         }
         if (vitoriaderrota == 2)
@@ -67,6 +71,10 @@ public class GameManager : MonoBehaviour
                     SceneManager.LoadScene("cena2");
                 }
                 if (faseatual == 2)
+                {
+                    SceneManager.LoadScene("cena3");
+                }
+                if (faseatual == 3)
                 {
                     SceneManager.LoadScene("MENU");
                 }
