@@ -76854,7 +76854,8 @@ PrefabInstance:
       propertyPath: faseatual
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4248228695201271705, guid: 73ea469126962324eb81bd9e4ed805f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -8,10 +8,11 @@ public class MenuManager : MonoBehaviour
 {
     void Start()
     {
+        Time.timeScale = 1;
     }
     void Update()
     {
-        Time.timeScale = 1;
+
     }
     public void clicarplay()
     {

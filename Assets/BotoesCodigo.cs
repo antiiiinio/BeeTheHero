@@ -28,10 +28,6 @@ public class BotoesCodigo : MonoBehaviour
     {
         SceneManager.LoadScene("MENU");
     }
-    public void Opcoes()
-    {
-        PainelOpcoes.SetActive(true);
-    }
     void pausado()
     {
         if (isPaused)
