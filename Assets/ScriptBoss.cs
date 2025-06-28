@@ -87,10 +87,6 @@ public class ScriptBoss : MonoBehaviour
         {
             animboss.StopPlayback();
             animboss.Play("IdleBoss");
-            animboss.SetBool("Cut", false);
-            animboss.SetBool("FireLeft", false);
-            animboss.SetBool("FireRigth", false);
-            animboss.SetBool("Idle", true);
             OrdemEventos = 0f;
         }
         if (playerTransform != null)
