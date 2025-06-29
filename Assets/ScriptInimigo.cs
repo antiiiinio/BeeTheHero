@@ -45,7 +45,7 @@ public class ScriptInimigo : MonoBehaviour
             anim.SetBool("Idle", true);
             anim.SetBool("Ataque", false);
         }
-        if (timer >= 4f)
+        if (timer >= 4.5f)
         {
             anim.SetBool("Idle", false);
             anim.SetBool("Ataque", true);
@@ -91,7 +91,7 @@ public class ScriptInimigo : MonoBehaviour
     }
     public void AtirarInimigo()
     {
-        Instantiate(tiroinimigo, transform.position + transform.forward, transform.rotation);
+        Instantiate(tiroinimigo, transform.position + new Vector3(0, -1, 0), transform.rotation);
     }
     public void DanoTiroBasico(int dano)
     {

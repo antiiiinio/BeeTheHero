@@ -8,15 +8,14 @@ public class ScriptBoss : MonoBehaviour
     public float forceAmount = 10f;
     public GameObject TiroBossBasico;
     public GameObject TiroBossPesado;
-    public int vidaBoss = 1;
+    public int vidaBoss = 150;
     public float OrdemEventos;
     public float Burst = 0.10f;
     public float BurstCD = 1f;
     public Transform shootpointL;
     public Transform shootpointR;
-
-    // Referência ao jogador
     private Transform playerTransform;
+    private Vector3 lookPlayer;
 
     public void Start()
     {
@@ -78,12 +77,12 @@ public class ScriptBoss : MonoBehaviour
             animboss.SetBool("Idle", true);
             animboss.SetBool("FireRigth", false);
         }
-        if (OrdemEventos >= 14.9f && OrdemEventos < 18f)
+        if (OrdemEventos >= 14.9f && OrdemEventos < 16f)
         {
             animboss.SetBool("Idle", true);
             animboss.SetBool("FireLeft", false);
         }
-        if (OrdemEventos >= 18f)
+        if (OrdemEventos >= 16f)
         {
             animboss.StopPlayback();
             animboss.Play("IdleBoss");
@@ -91,7 +90,8 @@ public class ScriptBoss : MonoBehaviour
         }
         if (playerTransform != null)
         {
-            transform.LookAt(playerTransform);
+            lookPlayer = new Vector3(playerTransform.position.x, playerTransform.position.y - 5, playerTransform.position.z);
+            transform.LookAt(lookPlayer);
         }
         if (vidaBoss <=0)
         {

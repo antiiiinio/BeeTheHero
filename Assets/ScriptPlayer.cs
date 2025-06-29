@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
             timerbasico = 0f;
         }
         timerbasico += Time.deltaTime;
-        if (armapesada == 1);
+        if (armapesada == 1)
         {
             if (armaequipada == 2)
             {
