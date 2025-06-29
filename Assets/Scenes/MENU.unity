@@ -994,6 +994,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 6473169236290571207, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7406039811196739717, guid: 10b58d0a0a9d4594e83ee635be4e6422, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1090,8 +1094,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280043367
-  m_fontColor: {r: 0.4056604, g: 0.2801427, b: 0.109069064, a: 1}
+    rgba: 4289985279
+  m_fontColor: {r: 1, g: 0.9813433, b: 0.7028302, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

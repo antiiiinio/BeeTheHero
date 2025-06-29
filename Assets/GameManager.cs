@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Image[] ColmeiaControl;
     public Image[] VidaControl;
     public TextMeshProUGUI ControleGameOver;
     public TextMeshProUGUI ControlePontos;
@@ -111,10 +112,6 @@ public class GameManager : MonoBehaviour
             VidaControl[VidaPlayer].gameObject.SetActive(false);
         }
     }
-    public void DiminuirVidaColmeia()
-    {
-        Vidacolmeia = Vidacolmeia - 1;
-    }
     public void CuraPlayer(int cura)
     {
         for (int i = 0; i < cura; i++)
@@ -122,5 +119,11 @@ public class GameManager : MonoBehaviour
             VidaControl[VidaPlayer].gameObject.SetActive(true);
             VidaPlayer = VidaPlayer + 1;
         }
+    }
+    public void DiminuirVidaColmeia()
+    {
+        Vidacolmeia = Vidacolmeia - 1;
+        ColmeiaControl[Vidacolmeia].gameObject.SetActive(false);
+        ColmeiaControl[Vidacolmeia+3].gameObject.SetActive(true);
     }
 }
