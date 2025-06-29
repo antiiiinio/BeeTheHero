@@ -172,11 +172,14 @@ MonoBehaviour:
   TiroBossBasico: {fileID: 8820995566757846450, guid: db31130212b20384fbb6ce6189eb30ac, type: 3}
   TiroBossPesado: {fileID: 199612246325305805, guid: fc2493be9fdbe784e9bff0cf1a2d370a, type: 3}
   vidaBoss: 150
+  vidamaximaboss: 500
   OrdemEventos: 0
   Burst: 0.1
   BurstCD: 1
   shootpointL: {fileID: 0}
   shootpointR: {fileID: 0}
+  barraVidaDireita: {fileID: 0}
+  barraVidaEsquerda: {fileID: 0}
 --- !u!65 &8916643219226858536
 BoxCollider:
   m_ObjectHideFlags: 0

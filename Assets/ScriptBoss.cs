@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScriptBoss : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class ScriptBoss : MonoBehaviour
     public float forceAmount = 10f;
     public GameObject TiroBossBasico;
     public GameObject TiroBossPesado;
-    public int vidaBoss = 150;
+    public int vidaBoss;
+    public int vidamaximaboss = 500;
     public float OrdemEventos;
     public float Burst = 0.10f;
     public float BurstCD = 1f;
@@ -16,9 +18,16 @@ public class ScriptBoss : MonoBehaviour
     public Transform shootpointR;
     private Transform playerTransform;
     private Vector3 lookPlayer;
+    public Slider barraVidaDireita;
+    public Slider barraVidaEsquerda;
 
     public void Start()
     {
+        vidaBoss = vidamaximaboss;
+        barraVidaDireita.maxValue = vidamaximaboss;
+        barraVidaDireita.value = vidaBoss;
+        barraVidaEsquerda.maxValue = vidamaximaboss;
+        barraVidaEsquerda.value = vidaBoss;
         animboss = GetComponent<Animator>();
         animboss.Play("ChegandoBoss");
         animboss.SetBool("Idle", true);
@@ -135,9 +144,13 @@ public class ScriptBoss : MonoBehaviour
     public void DanoTiroBasico(int dano)
     {
         vidaBoss -= dano;
+        barraVidaDireita.value = vidaBoss;
+        barraVidaEsquerda.value = vidaBoss;
     }
     public void DanoTiroPesado(int dano)
     {
         vidaBoss -= dano;
+        barraVidaDireita.value = vidaBoss;
+        barraVidaEsquerda.value = vidaBoss;
     }
 }

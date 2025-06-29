@@ -1,8 +1,10 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class AbelhaScript : MonoBehaviour
 {
+    CinemachineImpulseSource controlador;
     GameManager controller;
     public Rigidbody Abelha;
     float forceAmount = 450f;
@@ -29,15 +31,19 @@ public class AbelhaScript : MonoBehaviour
         {
             controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.DiminuirVidaColmeia();
-            controller.MudarPontos(-50);
             Destroy(gameObject);
+            controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+            controlador.GenerateImpulse(0.5f);
+            controller.MudarPontos(-50);
         }
         if (other.gameObject.tag == "TiroBasico")
         {
             controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.DiminuirVidaColmeia();
-            controller.MudarPontos(-50);
             Destroy(gameObject);
+            controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
+            controlador.GenerateImpulse(0.5f);
+            controller.MudarPontos(-50);
         }
     }
 
