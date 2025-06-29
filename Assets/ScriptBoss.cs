@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ScriptBoss : MonoBehaviour
 {
+    AudioController AudioControl;
     public Animator animboss;
     GameManager controller;
     public Rigidbody rbinimigo;
@@ -10,14 +11,14 @@ public class ScriptBoss : MonoBehaviour
     public GameObject TiroBossBasico;
     public GameObject TiroBossPesado;
     public int vidaBoss;
-    public int vidamaximaboss = 500;
-    public float OrdemEventos;
-    public float Burst = 0.10f;
-    public float BurstCD = 1f;
+    int vidamaximaboss = 500;
+    float OrdemEventos;
+    float Burst = 0.10f;
+    float BurstCD = 1f;
     public Transform shootpointL;
     public Transform shootpointR;
-    private Transform playerTransform;
-    private Vector3 lookPlayer;
+    Transform playerTransform;
+    Vector3 lookPlayer;
     public Slider barraVidaDireita;
     public Slider barraVidaEsquerda;
 
@@ -36,6 +37,7 @@ public class ScriptBoss : MonoBehaviour
         animboss.SetBool("FireRigth", false);
         OrdemEventos = -5f;
         rbinimigo = GetComponent<Rigidbody>();
+        AudioControl = GameObject.FindGameObjectWithTag("MainCamera").gameObject.GetComponent<AudioController>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -120,6 +122,7 @@ public class ScriptBoss : MonoBehaviour
         {
             BurstCD = 0f;
             Instantiate(TiroBossBasico, shootpointL.position + shootpointL.forward, shootpointL.rotation);
+            AudioControl.PlayAudioBoss(2);
         }
     }
     public void FireLeft()
@@ -128,6 +131,7 @@ public class ScriptBoss : MonoBehaviour
         {
             BurstCD = 0f;
             Instantiate(TiroBossBasico, shootpointR.position + shootpointR.forward, shootpointR.rotation);
+            AudioControl.PlayAudioBoss(2);
         }
     }
     void OnTriggerEnter(Collider other)

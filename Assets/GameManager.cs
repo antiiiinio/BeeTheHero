@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Image[] WeaponControl;
     public Image[] ColmeiaControl;
     public Image[] VidaControl;
     public TextMeshProUGUI ControleGameOver;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int Vidacolmeia;
     public int vitoriaderrota;
     public int faseatual;
+    public GameObject slider;
 
     public void Start()
     {
@@ -125,5 +127,20 @@ public class GameManager : MonoBehaviour
         Vidacolmeia = Vidacolmeia - 1;
         ColmeiaControl[Vidacolmeia].gameObject.SetActive(false);
         ColmeiaControl[Vidacolmeia+3].gameObject.SetActive(true);
+    }
+    public void TrocarArma(int value)
+    {
+        if (value == 1)
+        {
+            WeaponControl[0].gameObject.SetActive(true);
+            WeaponControl[1].gameObject.SetActive(false);
+            slider.SetActive(false);
+        }
+        if (value == 2)
+        {
+            WeaponControl[0].gameObject.SetActive(false);
+            WeaponControl[1].gameObject.SetActive(true);
+            slider.SetActive(true);
+        }
     }
 }

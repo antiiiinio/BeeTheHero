@@ -1,10 +1,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 using UnityEngine.Rendering;
 
 public class ScriptInimigo : MonoBehaviour
 {
+    public AudioClip audio;
+    public AudioSource Inimigo;
     public Animator anim;
     GameManager controller;
     public Rigidbody rbinimigo;
@@ -92,6 +95,7 @@ public class ScriptInimigo : MonoBehaviour
     public void AtirarInimigo()
     {
         Instantiate(tiroinimigo, transform.position + new Vector3(0, -1, 0), transform.rotation);
+        PlayAudioInimigo();
     }
     public void DanoTiroBasico(int dano)
     {
@@ -100,5 +104,10 @@ public class ScriptInimigo : MonoBehaviour
     public void DanoTiroPesado(int dano)
     {
         vidaInimigo -= dano;
+    }
+    public void PlayAudioInimigo()
+    {
+        Inimigo.clip = audio;
+        Inimigo.Play();
     }
 }

@@ -51,6 +51,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 8dccf33401b2b344498df794f1159adb
     name: effvol
+  - guid: b7f224386885c43449254aba24e99261
+    name: musicvol
   m_AudioMixerGroupViews:
   - guids:
     - 0225b842f70077e41b3f7c54c7a1f433

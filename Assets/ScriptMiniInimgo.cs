@@ -6,6 +6,8 @@ using Unity.Mathematics;
 
 public class ScriptMiniInimigo : MonoBehaviour
 {
+    public AudioClip audio;
+    public AudioSource MiniInimigo;
     public Animator Minianim;
     GameManager controller;
     public Rigidbody rbinimigo;
@@ -51,7 +53,7 @@ public class ScriptMiniInimigo : MonoBehaviour
         if (vidaInimigo <= 0) //droprate de power-up
         {
             Random = UnityEngine.Random.Range(0, 100);
-            if (Random <= 50)
+            if (Random <= 20)
             {
                 Instantiate(powerUpFireRate, transform.position + new Vector3(0, 0, 1), transform.rotation);
             }
@@ -74,6 +76,7 @@ public class ScriptMiniInimigo : MonoBehaviour
         {
             BurstCD = 0f;
             Instantiate(tiroinimigo, transform.position + transform.forward, transform.rotation);
+            PlayAudioMiniInimigo();
             if (timer >= 5.3f)
             {
                 timer = 0f;
@@ -98,5 +101,10 @@ public class ScriptMiniInimigo : MonoBehaviour
     public void DanoTiroPesado(int dano)
     {
         vidaInimigo -= dano;
+    }
+    public void PlayAudioMiniInimigo()
+    {
+        MiniInimigo.clip = audio;
+        MiniInimigo.Play();
     }
 }

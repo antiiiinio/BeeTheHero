@@ -6,9 +6,11 @@ using Unity.VisualScripting;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.VFX;
 using Unity.Cinemachine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEditor.AnimatedValues;
 public class Player : MonoBehaviour
 {
+    public Animator anim;
     AudioController AudioControl;
     CinemachineImpulseSource controlador;
     GameManager controller;
@@ -22,10 +24,16 @@ public class Player : MonoBehaviour
     public int armabasica;
     public int armapesada;
     public int armaequipada;
+    public Slider Medidor;
 
 
     void Start()
     {
+        controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
+        
+        anim = GetComponent<Animator>();
+        anim.SetBool("Idle", true);
+        anim.Play("Idle");
         DashTimer = 2f;
         AudioControl = GameObject.FindGameObjectWithTag("MainCamera").gameObject.GetComponent<AudioController>();
         armabasica = 1;
@@ -43,6 +51,17 @@ public class Player : MonoBehaviour
     public float DashCooldown = 2f;
     void Update()
     {
+        Medidor.maxValue = timepesado;
+        Medidor.value = timerpesado;
+        if (armaequipada == 1)
+        {
+            controller.TrocarArma(1);
+        }
+        if (armaequipada == 2)
+        {
+            controller.TrocarArma(2);
+        }
+        anim.SetBool("Idle", true);
         DashTimer += Time.deltaTime;
         if (tempoAtivo >= duracao)
         {
@@ -78,6 +97,9 @@ public class Player : MonoBehaviour
             {
                 if (DashTimer >= DashCooldown)
                 {
+                    anim.SetBool("Idle", false);
+                    anim.StopPlayback();
+                    anim.Play("Dash");
                     rb.AddForce(Vector3.up * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
@@ -92,6 +114,9 @@ public class Player : MonoBehaviour
             {
                 if (DashTimer >= DashCooldown)
                 {
+                    anim.SetBool("Idle", false);
+                    anim.StopPlayback();
+                    anim.Play("Dash");
                     rb.AddForce(Vector3.down * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
@@ -106,6 +131,9 @@ public class Player : MonoBehaviour
             {
                 if (DashTimer >= DashCooldown)
                 {
+                    anim.SetBool("Idle", false);
+                    anim.StopPlayback();
+                    anim.Play("Dash");
                     rb.AddForce(Vector3.right * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
@@ -120,6 +148,9 @@ public class Player : MonoBehaviour
             {
                 if (DashTimer >= DashCooldown)
                 {
+                    anim.SetBool("Idle", false);
+                    anim.StopPlayback();
+                    anim.Play("Dash");
                     rb.AddForce(Vector3.left * DashForce * Time.deltaTime);
                     DashTimer = 0f;
                     controlador = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<CinemachineImpulseSource>();
@@ -127,18 +158,22 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if(armapesada ==1)
         {
-            armaequipada = armaequipada + 1;
-            timerpesado = 0f;
-            timerbasico = 0f;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                armaequipada = armaequipada + 1;
+                timerpesado = 0f;
+                timerbasico = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                armaequipada = armaequipada - 1;
+                timerpesado = 0f;
+                timerbasico = 0f;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            armaequipada = armaequipada - 1;
-            timerpesado = 0f;
-            timerbasico = 0f;
-        }
+        
         timerbasico += Time.deltaTime;
         if (armapesada == 1)
         {
@@ -174,7 +209,7 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.Space))
                     {
-                        Instantiate(TiroVFXNOVO, transform.position + new Vector3(0, -1, 1), transform.rotation);
+                        Instantiate(TiroVFXNOVO, transform.position + new Vector3(0, 0, 1), transform.rotation);
                         Atirarbasico();
                         AudioControl.PlayAudio(0);
                     }
