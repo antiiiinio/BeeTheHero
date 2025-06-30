@@ -130,7 +130,7 @@ public class ScriptBoss : MonoBehaviour
         if (BurstCD >= Burst)
         {
             BurstCD = 0f;
-            Instantiate(TiroBossBasico, shootpointR.position + shootpointR.forward, shootpointR.rotation);
+            Instantiate(TiroBossPesado, shootpointR.position + shootpointR.forward, shootpointR.rotation);
             AudioControl.PlayAudioBoss(2);
         }
     }

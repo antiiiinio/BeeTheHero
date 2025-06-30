@@ -6372,6 +6372,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1229643336}
     - target: {fileID: 6208707026431364128, guid: 0378e383d0d6b4145b2f604e31ed0116, type: 3}
+      propertyPath: TiroBossBasico
+      value: 
+      objectReference: {fileID: 8820995566757846450, guid: db31130212b20384fbb6ce6189eb30ac, type: 3}
+    - target: {fileID: 6208707026431364128, guid: 0378e383d0d6b4145b2f604e31ed0116, type: 3}
+      propertyPath: TiroBossPesado
+      value: 
+      objectReference: {fileID: 5877044069038128543, guid: 161cf3228a02ce545969b3dd46ba444b, type: 3}
+    - target: {fileID: 6208707026431364128, guid: 0378e383d0d6b4145b2f604e31ed0116, type: 3}
       propertyPath: barraVidaDireita
       value: 
       objectReference: {fileID: 95109474}
