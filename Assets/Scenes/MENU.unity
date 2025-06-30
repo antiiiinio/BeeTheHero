@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -134.8761, y: -48.5484}
+  m_AnchoredPosition: {x: -134.87598, y: -48.54834}
   m_SizeDelta: {x: -395.7462, y: -442.5362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82172217
@@ -331,7 +331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 62.99701, y: 26}
+  m_AnchoredPosition: {x: 62.99707, y: 26}
   m_SizeDelta: {x: 278.86, y: 129.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &303504129
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD - Movement\nSpace - Fire weapon\nESC - Pause\nE and Q - Change wepon\nShift
+  m_text: "WASD - Movement\nSpace - Fire weapon\nESC - Pause\nE and Q - Change weapon\nShift
     - Dash\nF - Next phase\n\nGame Cheats: \nI, O and P - Change between phases\nL
     - Infinite Health\nK - Deactivate infinite health"
   m_isRightToLeft: 0
@@ -2917,7 +2917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 62.997, y: 26}
+  m_AnchoredPosition: {x: 62.99707, y: 26}
   m_SizeDelta: {x: 278.86, y: 129.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1590828925
@@ -3046,6 +3046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 579154293}
     m_Modifications:
+    - target: {fileID: 432237017963419549, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 115.85986
+      objectReference: {fileID: 0}
     - target: {fileID: 1048433721901491911, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3053,6 +3057,10 @@ PrefabInstance:
     - target: {fileID: 1048433721901491911, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010326666662419243, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 115.85986
       objectReference: {fileID: 0}
     - target: {fileID: 2227288316010168955, guid: c89e65aca4651a24d89990b81bf76095, type: 3}
       propertyPath: m_AnchoredPosition.x
