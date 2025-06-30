@@ -99,7 +99,7 @@ MonoBehaviour:
   rbinimigo: {fileID: -1207678294417580068}
   forceAmount: 10
   tiroinimigo: {fileID: 8820995566757846450, guid: db31130212b20384fbb6ce6189eb30ac, type: 3}
-  powerUpFireRate: {fileID: 6673716176531008530, guid: 1d2193e2098473441af692a0209d829d, type: 3}
+  powerUpFireRate: {fileID: 7458291096400646211, guid: 08af4aaf11e1c48419b52922b5cbd670, type: 3}
   vidaInimigo: 5
   timer: 1
   time: 5

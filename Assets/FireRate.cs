@@ -11,7 +11,7 @@ public class PowerUpFireRate : MonoBehaviour
     }
     void Update()
     {
-        powerupfirerate.AddForce(transform.forward * forceAmount * Time.deltaTime);
+        powerupfirerate.AddForce(-transform.up * forceAmount * Time.deltaTime);
     }
     void OnTriggerEnter(Collider other)
     {

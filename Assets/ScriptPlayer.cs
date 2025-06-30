@@ -8,6 +8,7 @@ using UnityEngine.VFX;
 using Unity.Cinemachine;
 using UnityEngine.UI;
 using UnityEditor.AnimatedValues;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public Animator anim;
@@ -25,12 +26,13 @@ public class Player : MonoBehaviour
     public int armapesada;
     public int armaequipada;
     public Slider Medidor;
+    int invencivel;
 
 
     void Start()
     {
         controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
-        
+        invencivel = 0;
         anim = GetComponent<Animator>();
         anim.SetBool("Idle", true);
         anim.Play("Idle");
@@ -158,7 +160,27 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if(armapesada ==1)
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            invencivel = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            invencivel = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SceneManager.LoadScene("cena1");
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene("cena2");
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("cena3");
+        }
+        if (armapesada ==1)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -219,7 +241,7 @@ public class Player : MonoBehaviour
     }
     public void Atirarbasico()
     {
-        Instantiate(tiro, transform.position + new Vector3(0, 0, 1), transform.rotation);
+        Instantiate(tiro, transform.position + new Vector3(0, 0, 2), transform.rotation);
 
         timerbasico = 0f;
     }
@@ -231,12 +253,15 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "TiroBasicoInimigo")
+        if (invencivel == 0)
+        {
+            if (other.gameObject.tag == "TiroBasicoInimigo")
         {
             controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.DanoPlayer(1);
             controller.MudarPontos(-10);
             VidaPlayer = VidaPlayer - 1;
+        }
         }
         if (other.gameObject.tag == "CuraPowerUp")
         {

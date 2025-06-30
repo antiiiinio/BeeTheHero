@@ -4,6 +4,7 @@ using UnityEngine.Video;
 
 public class AbelhaScript : MonoBehaviour
 {
+    public Animator anim;
     CinemachineImpulseSource controlador;
     GameManager controller;
     public Rigidbody Abelha;
@@ -13,6 +14,8 @@ public class AbelhaScript : MonoBehaviour
     void Start()
     {
         Abelha = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        anim.Play("Idle");
     }
 
     // Update is called once per frame

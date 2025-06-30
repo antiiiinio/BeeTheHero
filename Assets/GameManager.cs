@@ -77,10 +77,6 @@ public class GameManager : MonoBehaviour
                 {
                     SceneManager.LoadScene("cena3");
                 }
-                if (faseatual == 3)
-                {
-                    SceneManager.LoadScene("MENU");
-                }
             }
         }
     }

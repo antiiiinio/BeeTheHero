@@ -55,7 +55,7 @@ public class ScriptMiniInimigo : MonoBehaviour
             Random = UnityEngine.Random.Range(0, 100);
             if (Random <= 20)
             {
-                Instantiate(powerUpFireRate, transform.position + new Vector3(0, 0, 1), transform.rotation);
+                Instantiate(powerUpFireRate, transform.position + new Vector3(0, 0, 1), Quaternion.Euler(-90f,180f, 0f));
             }
             controller = GameObject.FindGameObjectWithTag("interface").gameObject.GetComponent<GameManager>();
             controller.MudarPontos(10);
