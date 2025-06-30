@@ -1,13 +1,7 @@
 using UnityEngine;
-using System.Collections;
-using NUnit.Framework;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.VFX;
 using Unity.Cinemachine;
 using UnityEngine.UI;
-using UnityEditor.AnimatedValues;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
